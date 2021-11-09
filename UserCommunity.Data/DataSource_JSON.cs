@@ -9,7 +9,7 @@ namespace UserCommunity.Data
 {
     public class DataSource_JSON: IDataSource<UserDTO>
     {
-        readonly string path = @"C:\Users\kippe\source\repos\UserCommunity.UI\UserCommunity.Data\files\users.json";
+        readonly string path = @"C:\Users\pelle\Source\Repos\UserCommunity1\UserCommunity.Data\files\users.json";
 
 
         public bool Delete(UserDTO _object)
@@ -38,7 +38,13 @@ namespace UserCommunity.Data
 
         public void Save(UserDTO _object)
         {
-            throw new NotImplementedException();
+            UserDTO NewUser = _object;
+            List<UserDTO> users = LoadAll().ToList();
+            int currentId = (users.Last().ID + 1);
+            NewUser.ID = currentId;
+            users.Add(NewUser);
+            users.Sort();
+            File.WriteAllText(path, JsonConvert.SerializeObject(users));
         }
 
         public UserDTO Update(UserDTO _object)
@@ -51,5 +57,7 @@ namespace UserCommunity.Data
             File.WriteAllText(path, JsonConvert.SerializeObject(users));
             return NewUser;
         }
+
+       
     }
 }

@@ -11,8 +11,8 @@
                     <p class="p-0 m-0 flex-grow-1">
                         @user.FirstName @user.SurName
                     </p>
-                    <input type="hidden" asp-for="ID" value="@user.ID" />
-                    <button asp-page-handler="Edit" class="btn btn-primary">Edit</button>
+                  
+                    <button asp-route-ID="@user.ID" asp-page="Edit" class="btn btn-primary">Edit</button>
                 </li>
             }
         </ul>

@@ -14,21 +14,10 @@ namespace UserCommunity.UI.Pages.User
         {
             _dataAccess = DataAccess;
         }
-        public void OnGet(int id)
-        {
-            CurrentUser = _dataAccess.LoadById(id);
-        }
-
-        public ActionResult OnPostEdit()
-        {
-            if (ModelState.IsValid)
-            {
-                _dataAccess.Update(CurrentUser);
-                return RedirectToPage("/User/List");
-            }
-            return Page();
-        }
-
+        //public void OnGet(int id)
+        //{
+        //    CurrentUser = _dataAccess.LoadById(id);
+        //}
         public ActionResult OnPostDelete()
         {
             if (ModelState.IsValid)
@@ -38,6 +27,23 @@ namespace UserCommunity.UI.Pages.User
             }
             return Page();
         }
+        public ActionResult OnPost(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                CurrentUser = _dataAccess.LoadById(id);
+            }
+            return Page();
+        }
+        public ActionResult OnPostEdit()
+        {
+            if (ModelState.IsValid)
+            {
+                _dataAccess.Update(CurrentUser);
+                return RedirectToPage("/User/List");
 
+            }
+            return Page();
+        }
     }
 }

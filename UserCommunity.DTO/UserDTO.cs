@@ -17,6 +17,15 @@ namespace UserCommunity.DTO
         [MinLength(6)]
         public string Email { get; set; }
 
+        [JsonProperty("Position")]
+        public string Position { get; set; }
+        [JsonProperty("Department")]
+        public string Department { get; set; }
+        [JsonProperty("DarkSecret")]
+        public string DarkSecret { get; set; }
+        [JsonProperty("TimeAtWork")]
+        public int TimeAtWork { get; set; }
+
         public int CompareTo(UserDTO other)
         {
             if (this.ID > other.ID)

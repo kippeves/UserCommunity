@@ -1,14 +1,1 @@
-[
-  {
-    "ID": 1,
-    "FirstName": "Rickard",
-    "SurName": "Nilsson",
-    "Email": "rickard@gmail.com"
-  },
-  {
-    "ID": 2,
-    "FirstName": "Lars",
-    "SurName": "Adaktusson",
-    "Email": "private@csi.com"
-  }
-]
+[{"ID":1,"FirstName":"JOHAN","SurName":"Görtz","Email":"Carlgortz@gmail.com","Position":"PRO","Department":"ITSECURITY","DarkSecret":"secretly likes hentai","TimeAtWork":0},{"ID":2,"FirstName":"Carl","SurName":"Görtz","Email":"Carlgortz@gmail.com","Position":"PRO","Department":"ITSECURITY","DarkSecret":"test","TimeAtWork":0},{"ID":3,"FirstName":null,"SurName":null,"Email":null,"Position":null,"Department":null,"DarkSecret":null,"TimeAtWork":0},{"ID":4,"FirstName":null,"SurName":null,"Email":null,"Position":null,"Department":null,"DarkSecret":null,"TimeAtWork":0},{"ID":5,"FirstName":null,"SurName":null,"Email":null,"Position":null,"Department":null,"DarkSecret":null,"TimeAtWork":0}]
