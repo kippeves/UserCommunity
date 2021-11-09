@@ -1,0 +1,20 @@
+﻿@page
+@model UserCommunity.UI.Pages.User.ListModel
+@{
+}
+<div class="container-fluid">
+    <form method="post">
+        <ul class="list-group list-group-flush">
+            @foreach (var user in Model.Users)
+            {
+                <li class="list-group-item d-flex">
+                    <p class="p-0 m-0 flex-grow-1">
+                        @user.FirstName @user.SurName
+                    </p>
+                    <input type="hidden" asp-for="ID" value="@user.ID" />
+                    <button asp-page-handler="Edit" class="btn btn-primary">Edit</button>
+                </li>
+            }
+        </ul>
+    </form>
+</div>
