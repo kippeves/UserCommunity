@@ -10,21 +10,26 @@
             </div>
             <div class="card-body">
                 <div class="input-group">
-                    <span class="input-group-text">Name</span> 
+                    <span class="input-group-text">Name</span>
                     <input asp-for="CurrentUser.FirstName" type="text" aria-label="First name" class="form-control">
+                    <span asp-validation-for="CurrentUser.FirstName" class="text-danger"></span>
                     <input asp-for="CurrentUser.SurName" type="text" aria-label="Last name" class="form-control">
+                    <span asp-validation-for="CurrentUser.SurName" class="text-danger"></span>
                 </div>
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">Department</span>
                     <input asp-for="CurrentUser.Department" type="text" aria-label="Department" class="form-control">
+                    <span asp-validation-for="CurrentUser.Department" class="text-danger"></span>
                 </div>
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">Position</span>
                     <input asp-for="CurrentUser.Position" type="text" aria-label="Position" class="form-control">
+                    <span asp-validation-for="CurrentUser.Position" class="text-danger"></span>
                 </div>
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">Working hours</span>
                     <input asp-for="CurrentUser.TimeAtWork" type="text" aria-label="Working hours" class="form-control">
+                    <span asp-validation-for="CurrentUser.TimeAtWork" class="text-danger"></span>
                 </div>
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">Secret</span>
@@ -33,6 +38,7 @@
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">Email</span>
                     <input asp-for="CurrentUser.Email" type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
+                    <span asp-validation-for="CurrentUser.Email" class="text-danger"></span>
                 </div>
                 <button asp-page-handler="Save" class="btn btn-primary">Save</button>
 

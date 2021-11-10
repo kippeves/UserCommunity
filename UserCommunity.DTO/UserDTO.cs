@@ -10,20 +10,26 @@ namespace UserCommunity.DTO
         [JsonProperty("ID")]
         public int ID { get; set; }
         [MinLength(2)]
+        [Required]
         public string FirstName { get; set; }
         [MinLength(2)]
+        [Required]
         public string SurName { get; set; }
         [JsonProperty("Email")]
         [MinLength(6)]
+        [Required]
         public string Email { get; set; }
 
         [JsonProperty("Position")]
+        [Required]
         public string Position { get; set; }
         [JsonProperty("Department")]
+        [Required]
         public string Department { get; set; }
         [JsonProperty("DarkSecret")]
         public string DarkSecret { get; set; }
         [JsonProperty("TimeAtWork")]
+        [Required]
         public int TimeAtWork { get; set; }
 
         public int CompareTo(UserDTO other)
