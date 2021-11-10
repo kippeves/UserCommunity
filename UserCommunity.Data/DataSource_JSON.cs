@@ -9,9 +9,11 @@ namespace UserCommunity.Data
 {
     public class DataSource_JSON: IDataSource<UserDTO>
     {
-        readonly string path = @"C:\Users\pelle\Source\Repos\UserCommunity1\UserCommunity.Data\files\users.json";
-
-
+        // Lägg till din fil i listan om du byter till bärbara sen. Byt ut currentpath mot den filplats du har.
+        static string Kristian = @"C:\Users\kippe\source\repos\UserCommunity.UI\UserCommunity.Data\files\users.json";
+        static string Per = @"C:\Users\pelle\Source\Repos\UserCommunity1\UserCommunity.Data\files\users.json";
+        
+        string currentPath = Per;
         public bool Delete(UserDTO _object)
         {
             if (null != LoadById(_object.ID))
@@ -20,7 +22,7 @@ namespace UserCommunity.Data
                 List<UserDTO> users = LoadAll().ToList();
                 users.RemoveAll(OldUser => OldUser.ID == NewUser.ID);
                 users.Sort();
-                File.WriteAllText(path, JsonConvert.SerializeObject(users));
+                File.WriteAllText(currentPath, JsonConvert.SerializeObject(users));
                 return true;
             }
             else return false;
@@ -28,12 +30,12 @@ namespace UserCommunity.Data
 
         public IEnumerable<UserDTO> LoadAll()
         { 
-            return JsonConvert.DeserializeObject<List<UserDTO>>(File.ReadAllText(path));
+            return JsonConvert.DeserializeObject<List<UserDTO>>(File.ReadAllText(currentPath));
         }
 
         public UserDTO LoadById(int i)
         {
-            return JsonConvert.DeserializeObject<List<UserDTO>>(File.ReadAllText(path)).Find(u => u.ID == i);
+            return JsonConvert.DeserializeObject<List<UserDTO>>(File.ReadAllText(currentPath)).Find(u => u.ID == i);
         }
 
         public void Save(UserDTO _object)
@@ -44,7 +46,7 @@ namespace UserCommunity.Data
             NewUser.ID = currentId;
             users.Add(NewUser);
             users.Sort();
-            File.WriteAllText(path, JsonConvert.SerializeObject(users));
+            File.WriteAllText(currentPath, JsonConvert.SerializeObject(users));
         }
 
         public UserDTO Update(UserDTO _object)
@@ -54,7 +56,7 @@ namespace UserCommunity.Data
             users.RemoveAll(OldUser => OldUser.ID == NewUser.ID);
             users.Add(NewUser);
             users.Sort();
-            File.WriteAllText(path, JsonConvert.SerializeObject(users));
+            File.WriteAllText(currentPath, JsonConvert.SerializeObject(users));
             return NewUser;
         }
 

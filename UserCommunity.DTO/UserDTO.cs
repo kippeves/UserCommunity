@@ -24,7 +24,7 @@ namespace UserCommunity.DTO
         [Required]
         public string Position { get; set; }
         [JsonProperty("Department")]
-        [Required]
+        [Required ]
         public string Department { get; set; }
         [JsonProperty("DarkSecret")]
         public string DarkSecret { get; set; }
